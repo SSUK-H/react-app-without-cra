@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React App Without CRA</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // SyntaxError 발생
+      // const App = () => {
+      //   return <h1>HELLO REACT WORLD</h1>; // jsx문법을 사용할 수 없음
+      // };
+      // const root = ReactDOM.createRoot(document.getElementById("root"));
+      // root.render(
+      //   <React.StrictMode>
+      //     <App />
+      //   </React.StrictMode>
+      // );
+
+      // createElement 사용하여 jsx를 작성하는 대신 리액트 엘리먼트를 생성
+      // const element = createElement(type, props, ...children)
+      // https://ko.react.dev/reference/react/createElement
+      const App = () => React.createElement("h1", null, "HELLO REACT WORLD");
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
